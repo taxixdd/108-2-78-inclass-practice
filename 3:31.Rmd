@@ -88,3 +88,29 @@ print(`小明108學年課表C`)
 print(`小明108學年課表D`)
 ```
 
+```{r}
+commit <- list(
+  author1 = list(
+    name = "Martin老師",
+    email = "mtlin@gm.ntpu.edu.tw",
+    ymd_hms("2020-03-25t07:17:40z")),
+  committer = list(
+    name = "emilyluckey",
+    email = "emily007@gmail.com",
+    ymd_hms("2020-03-26T08:18:40Z")
+  ),
+  message = "update" 
+)
+ print(commit)
+```
+```{r}
+library(jsonlite) 
+toJSON(commit)
+```
+
+```{r}
+library(jsonlite)
+fromJSON("https://opendata.cwb.gov.tw/fileapi/v1/opendataapi/F-C0032-001?Authorization=rdec-key-123-45678-011121314&format=JSON") ->
+  weather_next36hours
+```
+
