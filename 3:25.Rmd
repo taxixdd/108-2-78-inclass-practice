@@ -59,11 +59,42 @@ with_tz(pgTime, tzone="UTC")
 
 ```{r}
 studentTime <- c(
-  ymd_hms("2020-03-04T08"),
-  ymd_hms("2020-03-11 16:11:43",
-          "2020-03-11 16:11:43",
-        tz="Asia/Taipei")
+  ymd_hms("2020-03-04T08:19:19Z"),
+  ymd_hms("2020-03-11 16:11:43",tz="Asia/Taipei"),
+  ymd_hms("2020-03-11 16:11:43",tz="Asia/Taipei")
 )
 studentTime
+```
+```{r}
+vectorExample<-c(2,6,7)
+listExample <-list(2,6,7)
+
+print(vectorExample)
+print(listExample)
+```
+
+```{r}
+c("2020-03-31T13:40:55Z","一芳","2","水果茶")
+
+library(lubridate)
+'小明交易' <- list(ymd_hms("2020-03-31T13:40:55Z"),
+     "一芳",
+     2,
+     "水果茶")
+print('小明交易')
+```
+
+```{r}
+c(
+  c("108-1", "高級會計學",  "高等統計學"),
+  c("108-2","食在拉丁美洲")
+)
+```
+```{r}
+`小明108學年課表B`<-list(
+  list("108-1","高級會計學","高等統計學"),
+  list("108-2","食在拉丁美洲")
+)
+print(`小明108學年課表B`)
 ```
 
