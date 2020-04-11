@@ -179,5 +179,24 @@ str(taipeiNightMarkets[c(T,F,F,F,T,F,F,F,F,T,F,F,F,T)], max.level = 1)
 selectedMarkets <- rep(F,14)
 print(selectedMarkets)
 selectedMarkets[c(1,5,10,14)] <- TRUE
+print(selectedMarkets)
+```
+
+```{r}
+str(taipeiNightMarkets[selectedMarkets], max.level = 1)
+```
+
+```{r, results="asis"}
+str(listExample, max.level = 3)
+```
+
+```{r}
+get1 <- listExample[["學期"]]
+get2 <- listExample["學期"]
+```
+
+```{r}
+# 學期拿出來，有3個元素的list
+str(get1, max.level = 3)
 ```
 
