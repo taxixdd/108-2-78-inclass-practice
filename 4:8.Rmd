@@ -90,3 +90,36 @@ listExample$`學期`
 str(listExample)
 ```
 
+```{r}
+str(listExample$`學期`)
+```
+
+```{r}
+listExample[["student"]]
+listExample$student
+
+listExample[["學期"]] 
+listExample$`學期`
+```
+
+```{r}
+fromJSON("http://data.ntpc.gov.tw/api/v1/rest/datastore/382000000A-000157-002",
+         simplifyDataFrame = F) -> newTaipeiCityVaccine
+```
+
+```{r}
+str(newTaipeiCityVaccine)
+length(newTaipeiCityVaccine)
+names(newTaipeiCityVaccine)
+```
+
+```{r}
+str(newTaipeiCityVaccine[[1]])
+str(newTaipeiCityVaccine$success)
+str(newTaipeiCityVaccine[["success"]])
+
+str(newTaipeiCityVaccine[[2]],max.level = 1)
+str(newTaipeiCityVaccine$result,max.level = 1)
+str(newTaipeiCityVaccine[["result"]],max.level = 1)
+```
+
