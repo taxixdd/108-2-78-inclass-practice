@@ -123,3 +123,61 @@ str(newTaipeiCityVaccine$result,max.level = 1)
 str(newTaipeiCityVaccine[["result"]],max.level = 1)
 ```
 
+```{r}
+vectorExample
+vectorExample[c(1,3)]
+vectorExample[c(3,2,1)]
+```
+
+```{r}
+str(listExample, max.level=1)
+
+str(listExample[c(1,2)],max.level=1)
+```
+
+```{r}
+str(tainanSportsMap, max.level=1)
+
+str(tainanSportsMap[c(1,382,1076)],max.level=1)
+```
+
+```{r}
+# 顯示到第一層
+str(listExample, max.level=1)
+
+listExample[[c("學期")]]
+listExample[c("student","學期")]
+listExample[c("學期","student")]
+```
+
+```{r}
+fromJSON("https://www.dropbox.com/s/qnm9bnz7vccrvcz/taipeiNightMarkets.json?dl=1", simplifyDataFrame = F) -> taipeiNightMarkets
+```
+```{r}
+vectorExample
+vectorExample[c(T,T,F)] # 要，要，不要
+```
+
+```{r}
+str(listExample)
+str(listExample[c(F,T)]) # 不要，要
+str(listExample[c("學期")])
+str(listExample[c(T,T)]) # 要，要
+```
+
+```{r}
+names(taipeiNightMarkets)
+
+```
+```{r}
+c(T,F,F,F,T,F,F,F,F,T,F,F,F,T) -> selectedMarkets
+taipeiNightMarkets[selectedMarkets]
+str(taipeiNightMarkets[c(T,F,F,F,T,F,F,F,F,T,F,F,F,T)], max.level = 1)
+```
+
+```{r}
+selectedMarkets <- rep(F,14)
+print(selectedMarkets)
+selectedMarkets[c(1,5,10,14)] <- TRUE
+```
+
