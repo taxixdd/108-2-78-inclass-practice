@@ -105,3 +105,26 @@ exchangeRate_after98 <-
   )
 ```
 
+```{r}
+print(example[c("name","bloodType")])
+
+pick_bloodB <- example$bloodType == "B"
+example$name[pick_bloodB]
+```
+
+```{r}
+sequenceNums <- c(11, 6, 8, 11, 12, 11, 3, 7, 10, 8)
+
+pick_evens <- (sequenceNums %% 2) == 0
+sequenceNums[pick_evens]
+```
+```{r}
+source("https://www.dropbox.com/s/qsrw069n94k61lj/transcript100to103_list.R?dl=1")
+```
+```{r}
+set_LawBusiness <- c("法學院","商學院")
+pick_LawBusiness <- transcript100to103$學院 %in% set_LawBusiness
+```
+
+
+
