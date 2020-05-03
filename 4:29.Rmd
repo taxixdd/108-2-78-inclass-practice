@@ -126,5 +126,24 @@ set_LawBusiness <- c("法學院","商學院")
 pick_LawBusiness <- transcript100to103$學院 %in% set_LawBusiness
 ```
 
+```{r}
+x2 <- c(1,NA,10)
+y2 <- c(-1,NA,20)
 
+x3 <- c(NA,"小花")
+y3 <- c(NA,"小華")
+```
+
+
+```{r}
+x2
+is.na(x2)
+```
+
+```{r}
+print(example[c("name","weight")])
+
+pick_na <- is.na(example$weight)
+example$name[pick_na]
+```
 
