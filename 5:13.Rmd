@@ -226,6 +226,18 @@ covid19$地區
 ```
 
 ```{r}
+levels(covid19$年齡層)
 
+# 創造10歲間距的所有可能
+start <- seq(5, 55, by=10) # 由5到55，每個值差10的數值向量
+end <- seq(14, 64, by=10)
+middleLevels <- 
+  rep(
+    paste0(start,"-",end), 
+    each=2) # 每個新間距要2個
+newLevels <- c("4", middleLevels, "65+", "65+")
+
+levels(covid19$年齡層) <- newLevels
+covid19$年齡層
 ```
 
