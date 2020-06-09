@@ -54,3 +54,20 @@ demand(1.3)
 demand(1.4)
 ```
 
+```{r}
+demand_return <- 
+  function(p){
+    q_d <- 10-5*p
+    return(q_d)
+  }
+# 印在螢幕，但Global Environment並不會有q_d
+demand_return(1.2)
+```
+
+```{r}
+q_d <- 5
+demand_return(p=1.2)
+
+print(q_d)
+```
+
