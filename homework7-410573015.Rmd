@@ -153,15 +153,14 @@ list(
 
 ```
 
-
 ```{r ans31}
-entranceYear <- 100
-major <- "學系"
+major <- as.character(major)
+entranceYear <- as.integer(entranceYear)
 get_courses <- function(entranceYear, major){
-  pick1 <- str_detect(courseStructure$應修系級,"(?<=major)[1]",negate = FALSE)
-  pick2 <- str_detect(courseStructure$應修系級,"(?<=major)[2]",negate = FALSE)
-  pick3 <- str_detect(courseStructure$應修系級,"(?<=major)[3]",negate = FALSE)
-  pick4 <- str_detect(courseStructure$應修系級,"(?<=major)[4]",negate = FALSE)
+  pick1<-str_detect(courseStructure$應修系級,paste0("(?<=",major,")[1]"),negate =FALSE)
+  pick2 <- str_detect(courseStructure$應修系級,paste0("(?<=",major,")[2]"),negate = FALSE)
+  pick3 <- str_detect(courseStructure$應修系級,paste0("(?<=",major,")[3]"),negate = FALSE)
+  pick4 <- str_detect(courseStructure$應修系級,paste0("(?<=",major,")[4]"),negate = FALSE)
   pick_a <- str_detect(courseStructure$學年,entranceYear,negate = FALSE)
   ans <- list(
     year1 = courseStructure$科目名稱[pick1&pick_a],
@@ -171,7 +170,8 @@ get_courses <- function(entranceYear, major){
   )
   return(ans)
 }
-get_courses(100,"經濟系")
+
+get_courses
 ```
 
 ### 3.2 使用自創函數
@@ -187,7 +187,7 @@ get_courses(100,"經濟系")
 正確的程序最後會得到list_major?_allYears,
 
 ```{r ans32c}
-majors <- c("經濟系","社學系","社工系")
+major <- c("經濟系","社學系","社工系")
 entranceYears <- 100:103
 
 # 三系對100-103學年入學學生的四個年級課程規劃
