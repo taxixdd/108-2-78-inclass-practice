@@ -227,3 +227,30 @@ ymd_hms(glue::glue("{today()+days(1)} 00:20:00"),tz="Asia/Taipei") %>%
   whatNeedToDo_butler_mom()
 ```
 
+```{r}
+Sys.setenv(`_R_CHECK_LENGTH_1_CONDITION_` = "true")
+myAnswer <- c(2,3,6)
+correctAnswer <- c(2,3,5)
+
+if(myAnswer == correctAnswer){ # 只取用第一個T/F
+  print("你答對了")
+}
+```
+
+```{r}
+myAnswer <- c(2, 3, 6)
+correctAnswer <- c(2, 3, 5)
+
+if (all(myAnswer == correctAnswer)) {
+    # 要全TRUE
+    print("你答對了")
+}
+```
+
+```{r}
+if (any(myAnswer == correctAnswer)) {
+    # 只要有一個TRUE
+    print("裡頭有數字是對的")
+}
+```
+
